@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <style>
-        <!-- test -->
+    <!-- test -->
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
         body {
@@ -280,20 +280,12 @@
                             <i class="bi bi-hourglass-split me-2"></i>
                             Caricamento riferimenti bibliografici...
                         </div>
-                        <!-- Download button -->
-                        <div class="text-center mt-3" data-aos="fade-up" data-aos-delay="200">
-                            <a href="AI_ASSISTED_CLIMATE_DOWNSCALING_POSTER.png"
-                               target="_blank"
-                               download="AI_ASSISTED_CLIMATE_DOWNSCALING_POSTER.png"
-                               class="btn btn-success btn-lg shadow-sm">
-                                <i class="bi bi-download me-2"></i>Scarica il poster
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- References Section -->
     <div class="references-section" id="referencesSection">
         <div class="container-fluid p-0">
@@ -436,28 +428,49 @@
         }, 1000);
 
         function showReferences() {
+            // Hide poster section
             posterSection.classList.add('fade-out');
+            
+            // Change body background
             document.body.style.background = '#f8f9fa';
+            
+            // Show references section after poster fades out
             setTimeout(() => {
                 posterSection.style.display = 'none';
                 referencesSection.classList.add('show');
+                
+                // Scroll to top smoothly
                 window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                // Reinitialize AOS for references section
                 AOS.refresh();
             }, 800);
         }
 
         function showPoster() {
+            // Hide references section
             referencesSection.classList.remove('show');
+            
+            // Change body background back
             document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            
+            // Scroll to top immediately
             window.scrollTo(0, 0);
+            
+            // Show poster section
             setTimeout(() => {
                 posterSection.style.display = 'flex';
                 posterSection.classList.remove('fade-out');
+                
+                // Reset countdown
                 countdown = 3;
                 countdownElement.textContent = countdown;
+                
+                // Restart timer
                 const newTimer = setInterval(() => {
                     countdown--;
                     countdownElement.textContent = countdown;
+                    
                     if (countdown <= 0) {
                         clearInterval(newTimer);
                         showReferences();
