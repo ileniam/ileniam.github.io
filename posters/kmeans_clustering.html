@@ -15,6 +15,20 @@
     h1 {
       margin-top: 30px;
       color: #333;
+      font-size: 2em;
+    }
+    .author {
+      color: #555;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+    .author a {
+      color: #0077b5;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .author a:hover {
+      text-decoration: underline;
     }
     img {
       max-width: 90%;
@@ -35,7 +49,7 @@
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      display: none; /* inizialmente nascoste */
+      display: none;
       opacity: 0;
       transition: opacity 1s ease-in;
     }
@@ -48,37 +62,73 @@
       margin-bottom: 10px;
       color: #333;
     }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .download-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    .download-btn:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
   <h1>K-Means Clustering</h1>
 
+  <div class="author">
+    <span>Ilenia Manco</span> · 
+    <a href="https://www.linkedin.com/in/ilenia-manco-71991117a" target="_blank">LinkedIn</a>
+  </div>
+
   <img src="K-MEANS_CLUSTERING.png" alt="K-Means Clustering Poster">
+
+  <a href="K-MEANS_CLUSTERING.png" download="K-MEANS_CLUSTERING.png" class="download-btn">⬇️ Download Poster</a>
 
   <div id="references" class="references">
     <strong>References:</strong>
     <p>
-      Lavers, D.A., Villarini, G. (2015). The contribution of atmospheric rivers to precipitation in Europe and the United States. 
+      <a href="https://doi.org/10.1016/j.jhydrol.2014.12.010" target="_blank">
+        Lavers, D.A., Villarini, G. (2015). The contribution of atmospheric rivers to precipitation in Europe and the United States.
+      </a> 
       <em>Journal of Hydrology</em>, 522, 382–390.
     </p>
     <p>
-      Moccia, B., Ridolfi, E., Mineo, C., Russo, F., Napolitano, F. (2024). On the Occurrence of Extreme Rainfall Events Across Italy: Should We Update the Probability of Failure of Existing Hydraulic Works? 
-      <em>Water Resources Management</em>, 38(11), 4069–4082. 
-      <a href="https://doi.org/10.1007/s11269-024-03852-6" target="_blank">https://doi.org/10.1007/s11269-024-03852-6</a>
+      <a href="https://doi.org/10.1007/s11269-024-03852-6" target="_blank">
+        Moccia, B., Ridolfi, E., Mineo, C., Russo, F., Napolitano, F. (2024). On the Occurrence of Extreme Rainfall Events Across Italy: Should We Update the Probability of Failure of Existing Hydraulic Works?
+      </a> 
+      <em>Water Resources Management</em>, 38(11), 4069–4082.
     </p>
     <p>
-      Pinto, J.G., Ulbrich, S., Parodi, A., Rudari, R., Boni, G., Ulbrich, U. (2013). Identification and ranking of extraordinary rainfall events over Northwest Italy: The role of Atlantic moisture. 
-      <em>Journal of Geophysical Research: Atmospheres</em>, 118(5), 2085–2097. 
-      <a href="https://doi.org/10.1002/jgrd.50179" target="_blank">https://doi.org/10.1002/jgrd.50179</a>
+      <a href="https://doi.org/10.1002/jgrd.50179" target="_blank">
+        Pinto, J.G., Ulbrich, S., Parodi, A., Rudari, R., Boni, G., Ulbrich, U. (2013). Identification and ranking of extraordinary rainfall events over Northwest Italy: The role of Atlantic moisture.
+      </a> 
+      <em>Journal of Geophysical Research: Atmospheres</em>, 118(5), 2085–2097.
     </p>
     <p>
-      Raffa, M., Adinolfi, M., Reder, A., Marras, G. F., Mancini, M., Scipione, G., ... &amp; Mercogliano, P. (2023). Very high resolution projections over Italy under different CMIP5 IPCC scenarios. 
+      <a href="https://doi.org/10.1038/s41597-023-02124-4" target="_blank">
+        Raffa, M., Adinolfi, M., Reder, A., Marras, G. F., Mancini, M., Scipione, G., ... &amp; Mercogliano, P. (2023). Very high resolution projections over Italy under different CMIP5 IPCC scenarios.
+      </a> 
       <em>Scientific Data</em>, 10(1), 238.
     </p>
   </div>
 
   <script>
-    // Mostra le reference dopo 3 secondi
     window.onload = function() {
       setTimeout(function() {
         document.getElementById('references').classList.add('show');
